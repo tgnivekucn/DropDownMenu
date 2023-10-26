@@ -126,11 +126,13 @@ class DropDownView: UIView {
         if view == self {
             return nil
         }
-        if dropdownButton.frame.contains(point) {
-            return dropdownButton
-        }
-        if dropdownTable.frame.contains(point) {
-            return dropdownTable
+        if !self.isHidden {
+            if dropdownButton.frame.contains(point) {
+                return dropdownButton
+            }
+            if dropdownTable.frame.contains(point) {
+                return dropdownTable
+            }
         }
         return nil
     }
